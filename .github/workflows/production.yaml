@@ -4,10 +4,8 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   push:
-    # tags:
-    #   - release-production-**
-    branches:
-      - main
+    tags:
+      - release-production-**
 jobs:
   build:
     name: Build project
@@ -25,17 +23,18 @@ jobs:
         with:
           name: build-artifacts
           path: .vercel
-      # - name: Deploy Project Artifacts to Vercel
-      #   run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
   deploy:
     name: Deployment production
     runs-on: ubuntu-latest
     needs: build
     environment: Production
     steps:
-      - uses: actions/download-artifact@v3
+      - name: Download Project Artifacts
+        uses: actions/download-artifact@v3
         with:
           name: build-artifacts
           path: .vercel
-      - name: Display structure of downloaded files
-        run: ls -R
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
