@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   devServer: {
     port: 4001
   },
+  nitro: {
+    preset: 'vercel',
+  },
   components: [
     {
       path: '~/components',
