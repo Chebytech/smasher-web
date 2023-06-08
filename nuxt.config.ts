@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devServer: {
-    port: 4001
+    port: 4001,
   },
   nitro: {
     preset: 'vercel',
@@ -19,5 +19,8 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  typescript: {
+    typeCheck: true,
   },
 })
