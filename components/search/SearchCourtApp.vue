@@ -21,27 +21,31 @@ watchEffect(() => {
 })
 </script>
 <template>
-  <div class="p-4 pt-[100px] flex flex-col gap-8">
-    <SearchIcon filled class="!w-[140px] !h-[120px] !mx-auto" />
-    <p class="font-semibold text-[16px] text-center">
-      Temukan lapangan badminton terbaik dengan mudah dan cepat.
-    </p>
-    <div class="min-h-[79px]">
-      <input
-        v-model.trim="location"
-        class="w-full p-4 border-2 rounded-md"
-        placeholder="Lokasi Anda"
-        @keyup.enter="handleSubmit()"
-      />
-      <p v-if="!!error" class="text-[#FF5200] text-[10px] font-normal mt-1">
-        {{ error }}
-      </p>
-    </div>
-    <button
-      class="bg-[#44B85A] text-[16px] text-white font-semibold rounded-md h-[56px]"
-      @click="handleSubmit()"
+  <main class="pt-[50px] flex flex-col min-h-screen">
+    <section
+      class="p-4 pt-8 flex flex-col gap-8 bg-[#FAFAFA] flex-auto rounded-t-[32px]"
     >
-      Cari
-    </button>
-  </div>
+      <SearchIcon filled class="!w-[140px] !h-[120px] !mx-auto" />
+      <p class="font-semibold text-[16px] text-center">
+        Temukan lapangan badminton terbaik dengan mudah dan cepat.
+      </p>
+      <div class="min-h-[79px]">
+        <input
+          v-model.trim="location"
+          class="w-full p-4 border-2 rounded-md"
+          placeholder="Lokasi Anda"
+          @keyup.enter="handleSubmit()"
+        />
+        <p v-if="!!error" class="text-[#FF5200] text-[10px] font-normal mt-1">
+          {{ error }}
+        </p>
+      </div>
+      <button
+        class="bg-[#44B85A] text-[16px] text-white font-semibold rounded-md h-[56px]"
+        @click="handleSubmit()"
+      >
+        Cari
+      </button>
+    </section>
+  </main>
 </template>

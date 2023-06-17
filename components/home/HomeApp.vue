@@ -4,8 +4,8 @@ import HomeMenuSection from './HomeMenuSection.vue'
 </script>
 
 <template>
-  <div class="p-4">
+  <main class="min-h-screen flex flex-col gap-[24px]">
     <HomeBanner />
     <HomeMenuSection />
-  </div>
+  </main>
 </template>
