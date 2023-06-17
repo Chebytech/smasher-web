@@ -2,7 +2,7 @@
 import { MENUS } from '~/data/home'
 import IconMagnifier from '~/components/icons/IconMagnifier.vue'
 import IconScore from '~/components/icons/IconScore.vue'
-import ComingSoon from '~/public/icons/coming-soon.svg'
+import ComingSoon from '~/assets/icons/coming-soon.svg'
 
 const router = useRouter()
 </script>
@@ -20,7 +20,8 @@ const router = useRouter()
     >
       <ComingSoon
         v-if="menu.state === 'comming-soon'"
-        class="!w-[100px] !h-[30px] !absolute !top-[-2px] !right-[-5px] !fill-none z-10"
+        class="!w-[100px] !h-[30px] !absolute !top-[-2px] !right-[-5px] z-10"
+        filled
       />
       <IconMagnifier v-if="menu.label === 'Cari Lapangan'" />
       <IconScore
