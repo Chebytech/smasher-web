@@ -1,7 +1,11 @@
+<script setup lang="ts">
+import HomeBanner from './HomeBanner.vue'
+import HomeMenuSection from './HomeMenuSection.vue'
+</script>
+
 <template>
   <div class="p-4">
     <HomeBanner />
     <HomeMenuSection />
-    <p>Test Deployment 6 Jun 2023 20.50 GMT+7</p>
   </div>
 </template>
