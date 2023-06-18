@@ -2,7 +2,7 @@
 import { watchEffect, ref } from 'vue'
 import CourtSearchResultPlaceholder from './CourtSearchResultPlaceholder.vue'
 import CourtSearchEmptyState from './CourtSearchEmptyState.vue'
-import { useAPIGetPlacesByText } from '~/api/places/index'
+import { useAPIGetPlacesByText } from '~/utils/api/place'
 import CourtPlaceholderIcon from '~/assets/icons/court-placeholder.svg'
 import type { TPlace } from '~/types/places'
 
