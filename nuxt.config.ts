@@ -23,5 +23,5 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true,
   },
-  modules: ['nuxt-svgo'],
+  modules: ['nuxt-svgo', '@hebilicious/vue-query-nuxt'],
 })
