@@ -1,7 +1,13 @@
+import type { TGoogleAPIStatus } from './general'
+
 export type TBusinessStatus =
   | 'OPERATIONAL'
   | 'CLOSED_TEMPORARILY'
   | 'CLOSED_PERMANENTLY'
+
+export type TPlacesSearchStatus = TGoogleAPIStatus
+
+export type TPlaceDetailStatus = TGoogleAPIStatus | 'NOT_FOUND'
 
 export type TLatLngLiteral = {
   lat: number
@@ -53,17 +59,21 @@ export type TPlace = {
   user_ratings_total?: number
 }
 
-export type TPlacesSearchStatus =
-  | 'OK'
-  | 'ZERO_RESULTS'
-  | 'INVALID_REQUEST'
-  | 'OVER_QUERY_LIMIT'
-  | 'REQUEST_DENIED'
-  | 'UNKNOWN_ERROR'
-
 export type TPlacesTextSearchResponse = {
   html_attributions: string[]
   results: TPlace[]
   status: TPlacesSearchStatus
   next_page_token?: string
+}
+
+export type TPlaceDetail = {
+  url?: string
+  international_phone_number?: string
+} & TPlace
+
+export type TPlaceDetailResponse = {
+  html_attributions: string[]
+  result: TPlaceDetail
+  status: TPlaceDetailStatus
+  info_messages?: string[]
 }

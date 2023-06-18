@@ -1,6 +1,12 @@
-import { useInfiniteQuery } from '@tanstack/vue-query'
-import type { UseInfiniteQueryOptions } from '@tanstack/vue-query'
-import type { TPlacesTextSearchResponse } from '~/types/places'
+import { useInfiniteQuery, useQuery } from '@tanstack/vue-query'
+import type {
+  UseInfiniteQueryOptions,
+  UseQueryOptions,
+} from '@tanstack/vue-query'
+import type {
+  TPlacesTextSearchResponse,
+  TPlaceDetailResponse,
+} from '~/types/places'
 
 export function useAPIGetPlacesByText({
   text,
@@ -21,6 +27,22 @@ export function useAPIGetPlacesByText({
     useErrorBoundary: false,
     staleTime: 0,
     cacheTime: 0,
+    ...opts,
+  })
+}
+
+export function useAPIGetPlaceDetail({
+  id,
+  opts,
+}: {
+  id: string
+  opts?: UseQueryOptions<TPlaceDetailResponse>
+}) {
+  return useQuery({
+    queryKey: ['get-place-detail', id],
+    queryFn: () =>
+      $fetch<TPlaceDetailResponse>(`/api/places/detail?place_id=${id}`),
+    useErrorBoundary: false,
     ...opts,
   })
 }

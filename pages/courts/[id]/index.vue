@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HeaderBasic from '../../../components/header/HeaderBasic.vue'
+import CourtDetailApp from '../../../components/court/CourtDetailApp.vue'
 </script>
 
 <template>
@@ -9,6 +10,6 @@ import HeaderBasic from '../../../components/header/HeaderBasic.vue'
       <Meta name="description" content="Smasher - Court Detail" />
     </Head>
     <HeaderBasic title="Detail Lapangan" />
-    <h1 class="mt-[100px]">Detail Lapangan</h1>
+    <CourtDetailApp />
   </div>
 </template>
