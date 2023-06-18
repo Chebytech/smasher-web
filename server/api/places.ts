@@ -1,10 +1,9 @@
-import type { TPlacesTextSearchResponse } from '../../../types/places'
+import type { TPlacesTextSearchResponse } from '../../types/places'
 
-const API_BASE_PATH = process.env.GOOGLE_MAP_API_BASE_PATH
-const API_KEY = process.env.GOOGLE_MAP_API_KEY
-
-export default defineEventHandler(async (event) => {
+export default eventHandler(async (event) => {
   try {
+    const API_BASE_PATH = process.env.GOOGLE_MAP_API_BASE_PATH
+    const API_KEY = process.env.GOOGLE_MAP_API_KEY
     const query = getQuery(event)
     const text = query?.text
     const nextPageToken = query?.pagetoken
