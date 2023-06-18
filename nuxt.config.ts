@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     port: 4001,
   },
   nitro: {
-    preset: 'vercel',
+    preset: 'vercel-edge',
   },
   components: [
     {
