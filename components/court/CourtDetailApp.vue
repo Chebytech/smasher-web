@@ -3,6 +3,7 @@
 import PinLocationIcon from '~/assets/icons/location-pin-green.svg'
 import CopyIcon from '~/assets/icons/copy-black.svg'
 import { useAPIGetPlaceDetail } from '~/utils/api/place'
+import { copyToClipboard } from '~/utils/general'
 const route = useRoute()
 const placeId = route.params?.id
 const { data, isLoading } = useAPIGetPlaceDetail({
@@ -22,7 +23,7 @@ const { data, isLoading } = useAPIGetPlaceDetail({
         v-if="!isLoading"
         :src="`/api/places/photo?photo_reference=${data?.result?.photos?.[0]?.photo_reference}`"
         :alt="data?.result?.name"
-        class="w-full h-[250px] rounded-lg bg-gray-200"
+        class="w-full h-[250px] rounded-lg bg-gray-200 object-cover"
       />
     </section>
     <section class="p-4 pt-5 bg-[#FAFAFA] flex-auto rounded-t-[32px]">
@@ -77,7 +78,10 @@ const { data, isLoading } = useAPIGetPlaceDetail({
             <p class="text-[12px]">
               {{ data?.result?.international_phone_number || '-' }}
             </p>
-            <button v-if="!!data?.result?.international_phone_number">
+            <button
+              v-if="!!data?.result?.international_phone_number"
+              @click="copyToClipboard(data?.result?.international_phone_number)"
+            >
               <CopyIcon filled class="!w-[24px] !h-[24px]" />
             </button>
           </div>
