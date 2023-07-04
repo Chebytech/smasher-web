@@ -79,7 +79,11 @@ export default defineNuxtConfig({
     manifestFilename: 'site.webmanifest',
     workbox: {
       navigateFallback: '/',
-      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+      globPatterns: [
+        '**/*.{js,css,html,png,svg,ico,json}',
+        '.well-known/assetlinks.json',
+      ],
+      navigateFallbackAllowlist: [/^\/.well-known\/assetlinks.json/],
     },
     client: {
       installPrompt: true,

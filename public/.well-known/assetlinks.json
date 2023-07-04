@@ -1,8 +1,15 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.chebytech_smasher.twa",
-        "sha256_cert_fingerprints": ["42:EE:91:F3:FD:2E:0E:0D:8F:56:82:5B:55:25:4C:0B:0C:54:C1:AE:6C:3F:F8:87:CB:AD:A3:6E:D6:9A:68:6C", "DF:4B:41:88:1F:A0:9B:48:60:CD:42:2B:E7:CC:67:7F:06:17:B8:D4:40:34:16:87:F2:39:24:27:6A:8E:84:7F"]
-      }
-    }]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.chebytech_smasher.twa",
+      "sha256_cert_fingerprints": [
+        "42:EE:91:F3:FD:2E:0E:0D:8F:56:82:5B:55:25:4C:0B:0C:54:C1:AE:6C:3F:F8:87:CB:AD:A3:6E:D6:9A:68:6C",
+        "DF:4B:41:88:1F:A0:9B:48:60:CD:42:2B:E7:CC:67:7F:06:17:B8:D4:40:34:16:87:F2:39:24:27:6A:8E:84:7F"
+      ]
+    }
+  }
+]

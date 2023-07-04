@@ -5,6 +5,7 @@
     "dev": "nuxt dev --dotenv .env.local",
     "build": "nuxt build --dotenv .env",
     "build:local": "nuxt build --dotenv .env.local",
+    "build:local:clean": "rm -rf .output",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
